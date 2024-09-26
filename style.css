@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F7EDE8;
+}
+
+@font-face {
+    font-family:'Monst' ;
+    src: url(fonts/MontserratAlternates-Medium.ttf);
+}
+
+.otvets h1{
+    text-align: center;
+    padding: 50px 0 30px 0;
+    font-family:'Monst' ;
+    font-weight: 300;
+}
+
+.otvets{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center; 
+}
+
+.vopros{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    text-align: center; 
+       width: 1000px;
+}
+
+.vopros img{
+    width: 369px;
+    height: 461px;
+    margin-left: 30px;
+
+}
+
+/* Стили для FAQ */
+.faq {
+    max-width: 608px;
+    margin: 20px auto;
+    border-radius: 5px;
+   
+}
+
+.faq__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 35px;
+    transition: transform 0.3s; 
+    position: relative;
+    width: 608px;
+  
+    text-align: center;
+
+    border: 2px solid #FFD700;
+    background-color: white;
+}
+
+/* Стили для стрелочки */
+.faq__item h3 {
+    font-size: 19px;
+    font-weight: 200;
+    margin: 10px 10px;
+    cursor: pointer;
+    color: #000000;
+    transition: color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:'Monst' ;
+    
+}
+
+.faq__item h3:hover {
+    color: #ffcc00; 
+}
+
+.faq__item h3::after {
+    content: "▼"; 
+    font-size: 28px;
+    transition: transform 0.3s ease; 
+}
+
+.faq__item.active h3::after {
+    transform: rotate(180deg); 
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq__item p {
+    display: none;
+    margin: 5px 0;
+    color: #555;
+}
+
+
+.faq__item.active p {
+    display: block;
+    animation: fadeIn 0.3s; /* Анимация появления текста */
+    text-align: left;
+    margin-bottom: 0px;
+    background-color: #F7EDE8;
+    font-size: 16px;
+    padding: 15px 30px;
+    width: 605px;
+    font-family:'Monst' ;
+    font-weight: 200;
+}
